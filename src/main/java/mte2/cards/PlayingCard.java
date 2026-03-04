@@ -27,14 +27,10 @@ public class PlayingCard implements Comparable<PlayingCard> {
         return rank + " of " + suit; 
     }
 
-    /**
-     * Comparison logic:
-     * 1. Compare suits first.
-     * 2. If suits are identical, compare ranks.
-     */
+
     @Override
     public int compareTo(PlayingCard other) {
-        // Enums implement Comparable by their declaration order
+        
         int diff = this.suit.compareTo(other.suit);
         
         if (diff == 0) {
