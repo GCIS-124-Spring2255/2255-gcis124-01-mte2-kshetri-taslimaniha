@@ -4,30 +4,66 @@
 
 package mte2.deques;
 
-// import java.util.LinkedList;
-// import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Iterator;
 
-public class MyDeque {
-// public class MyDeque<E> implements Deque<E> {
+import java.util.NoSuchElementException;
+
+public class MyDeque<E> implements Deque<E> {
     
-    // private final LinkedList<E> list;
-    // public MyDeque() {    list = new LinkedList<>();    }
+    private final LinkedList<E> list;
 
-    // ... for enqueueFront ...
+    public MyDeque() {
+        this.list = new LinkedList<>();
+    }
 
-    // ... for enqueueBack ...
+    @Override
+    public void enqueueFront(E element) {
+        list.addFirst(element);
+    }
 
-    // ... for dequeueFront ...
+    @Override
+    public void enqueueBack(E element) {
+        list.addLast(element);
+    }
 
-    // ... for dequeueBack ... 
+    @Override
+    public E dequeueFront() {
+        if (list.isEmpty()) {
+            throw new NoSuchElementException("Deque is empty");
+        }
+        return list.removeFirst();
+    }
 
-    // ... for size ...
+    @Override
+    public E dequeueBack() {
+        if (list.isEmpty()) {
+            throw new NoSuchElementException("Deque is empty");
+        }
+        return list.removeLast();
+    }
 
-    // ... for iterator ...
+    @Override
+    public int size() {
+        return list.size();
+    }
 
+    
+    @Override
+    public Iterator<E> iterator() {
+        return list.iterator();
+    }
 
-    public static void main(String[] args) { 
+    public static void main(String[] args) {
+        MyDeque<String> dq = new MyDeque<>();
+        
+        dq.enqueueBack("Middle");
+        dq.enqueueFront("Start");
+        dq.enqueueBack("End");
 
-        // ...
+        // Testing the Iterator (which works because we overrode the default)
+        for (String s : dq) {
+            System.out.println(s); // Output: Start, Middle, End
+        }
     }
 }

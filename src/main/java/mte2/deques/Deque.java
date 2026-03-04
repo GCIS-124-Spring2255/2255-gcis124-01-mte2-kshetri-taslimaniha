@@ -4,13 +4,23 @@
 
 package mte2.deques;
 
-// public class Deque {
+
+
+import java.util.Iterator;
+
 public interface Deque<E> extends Iterable<E> {
     
-    public void enqueueFront(E element);
-    public void enqueueBack(E element);
-    public E dequeueFront();
-    public E dequeueBack();
-    public int size();    
+    void enqueueFront(E element);
+    void enqueueBack(E element);
+    
+    E dequeueFront();
+    E dequeueBack();
+    
+    int size();
 
+
+    @Override
+    default Iterator<E> iterator() {
+        throw new UnsupportedOperationException("Iterator not implemented yet.");
+    }
 }

@@ -7,3 +7,29 @@ Finally, implement the same Shape interface for Triangle class (Triangle.java wi
 [Hint: for Circle: P=2πr, A= πr2, for Rectangle: P=2(l+w), A=l*w,  for Triangle: P=a+b+c, A=√[s(s-a)(s-b)(s-c)] where s=(a+b+c)/2]
 
 */
+
+ // Overloaded methods
+    static double area(Circle c) {
+        return 3.14 * c.radius * c.radius;
+    }
+    static double area(Rectangle r) {
+        return r.length * r.breadth;
+    }
+    static double area(Square s) {
+        return s.side * s.side;
+    }
+    static double area(Triangle t) {
+        return 0.5 * t.base * t.height;
+    } // Overloaded methods
+    static double area(Circle c) {
+        return 3.14 * c.radius * c.radius;
+    }
+    static double area(Rectangle r) {
+        return r.length * r.breadth;
+    }
+    static double area(Square s) {
+        return s.side * s.side;
+    }
+    static double area(Triangle t) {
+        return 0.5 * t.base * t.height;
+    }
