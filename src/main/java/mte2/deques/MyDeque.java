@@ -63,7 +63,7 @@ public class MyDeque<E> implements Deque<E> {
 
         // Testing the Iterator (which works because we overrode the default)
         for (String s : dq) {
-            System.out.println(s); // Output: Start, Middle, End
+            System.out.println(s); 
         }
     }
 }
